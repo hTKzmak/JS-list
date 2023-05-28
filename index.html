@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            background: rgb(34, 34, 34);
+            font-size: 50px;
+            color: whitesmoke;
+            padding-left: 50px;
+        }
+        .elem {
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Каталог товаров</h1>
+    <ul>
+        <li>
+            <div class="elem">Книги</div>
+            <ul>
+                <li>
+                    <div class="elem">Отечественные</div>
+                    <ul>
+                        <li>Детективы</li>
+                        <li>научная Фантастика</li>
+                        <li>Исторические</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="elem">Зарубежные</div>
+                    <ul>
+                        <li>Детективы</li>
+                        <li>Научная Фантастика</li>
+                        <li>Исторические</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="elem">DVD</div>
+            <ul>
+                <li>
+                    <div class="elem">Отечественные</div>
+                    <ul>
+                        <li>Детективы</li>
+                        <li>научная Фантастика</li>
+                        <li>Исторические</li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="elem">Зарубежные</div>
+                    <ul>
+                        <li>Детективы</li>
+                        <li>Научная Фантастика</li>
+                        <li>Исторические</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        let elem = document.querySelectorAll(".elem")
+        elem.forEach(elem => {
+            let list = elem.nextElementSibling;
+            list.className = "list"
+            list.style.display = "none"
+            let sign = true;
+
+            elem.addEventListener("click", () => {
+                if (sign) {
+                    list.style.display = "";
+                    sign = false;
+                } else {
+                    list.style.display = "none";
+                    sign = true;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
